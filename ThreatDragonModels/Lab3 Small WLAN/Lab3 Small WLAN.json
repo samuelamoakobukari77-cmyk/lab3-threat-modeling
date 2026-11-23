@@ -68,8 +68,8 @@
                 "text": "Laptop\n"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -166,9 +166,34 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "2544e42a-99cb-4435-b8fd-e1dd23ce3f2f",
+                  "title": "No accountability for user actions",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "All users share one Wi-Fi passphrase and the router keeps no logs, so malicious actions cannot be traced to a user or device.",
+                  "mitigation": "Enable router logging, use per-user credentials (WPA2-Enterprise) or separate guest and staff SSIDs, and forward logs to a central store.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "5"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "repudiation": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -730,13 +755,6 @@
                 "informationDisclosure": 1,
                 "denialOfService": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -991,6 +1009,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr.Felix Aryeh",
-    "threatTop": 7
+    "threatTop": 8
   }
 }
