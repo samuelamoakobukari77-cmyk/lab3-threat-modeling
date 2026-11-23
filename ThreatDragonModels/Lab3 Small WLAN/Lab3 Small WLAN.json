@@ -587,11 +587,13 @@
                 "text": "NAS"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -688,13 +690,53 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "eb0cd03f-2a48-4871-a66d-46a53662803e",
+                  "title": "Unauthorized access to NAS files",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Any device on the WLAN can reach the NAS, and weak or default NAS credentials let an attacker read shared files.",
+                  "mitigation": "Use strong unique NAS credentials, per-user access control, disable unused services, and encrypt shares.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "8"
+                },
+                {
+                  "id": "4bca1da2-9397-41de-b979-9970e466dd2f",
+                  "title": "Ransomware",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Malware on a compromised client encrypts or modifies files on the NAS. Vulnerability: shared write access and no backups.",
+                  "mitigation": "Apply least-privilege permissions, keep regular offline backups, and patch and run antivirus on clients.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -784,17 +826,7 @@
                 "x": 350,
                 "y": -240
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "flow",
@@ -959,6 +991,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr.Felix Aryeh",
-    "threatTop": 5
+    "threatTop": 7
   }
 }
