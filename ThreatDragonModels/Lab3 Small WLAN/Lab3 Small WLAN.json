@@ -44,7 +44,7 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "cc3cc699-b352-4e0a-8260-84566d74213c"
+                "a9a8b70f-dff3-48f0-895c-c5cc8f9f3e10"
               ],
               "containedElements": [
                 "4981a014-4eca-4ace-a871-06d41d797309",
@@ -418,6 +418,32 @@
                   "new": false,
                   "number": 1,
                   "score": "7"
+                },
+                {
+                  "id": "bc3faccb-b774-4aff-b56c-894c8c6978ac",
+                  "title": "Default admin credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Router uses default admin credentials and outdated firmware, so an attacker can take full control of the network.",
+                  "mitigation": "Change default admin credentials, update firmware, disable remote administration and WPS.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "9"
+                },
+                {
+                  "id": "3d62da4d-8c6a-462d-87c9-5231fe6040f4",
+                  "title": "Deauthentication flood",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Attacker sends forged deauthentication frames and repeatedly disconnects clients. Vulnerability: management frames are unprotected (no 802.11w).",
+                  "mitigation": "Enable 802.11w (PMF) and WPA3, and monitor with a wireless IDS.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "5"
                 }
               ],
               "threatFrequency": {
@@ -425,9 +451,16 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -846,7 +879,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Internet traffic\n",
+              "name": "Internet traffic",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -862,25 +895,21 @@
               ]
             },
             "labels": [
-              "Internet traffic\n"
+              "Internet traffic"
             ],
-            "id": "cc3cc699-b352-4e0a-8260-84566d74213c",
+            "id": "a9a8b70f-dff3-48f0-895c-c5cc8f9f3e10",
             "source": {
-              "cell": "b86cf1f0-c770-4553-baef-d2271310fd95",
-              "port": "6f3c767e-29ed-4515-a462-e03ce401bac0"
-            },
-            "target": {
               "cell": "bb28ce50-4109-4ba7-8626-bdc5a85fa024",
               "port": "581f1c30-5e29-49f5-861f-5329b60f97a8"
             },
+            "target": {
+              "cell": "b86cf1f0-c770-4553-baef-d2271310fd95",
+              "port": "6f3c767e-29ed-4515-a462-e03ce401bac0"
+            },
             "vertices": [
               {
-                "x": 780,
-                "y": -350
-              },
-              {
                 "x": 710,
-                "y": -330
+                "y": -320
               }
             ]
           }
@@ -890,6 +919,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr.Felix Aryeh",
-    "threatTop": 1
+    "threatTop": 3
   }
 }
