@@ -1,0 +1,18 @@
+{
+  "version": "2.6.2",
+  "release_version": "",
+  "released_at": "2026-11-23",
+  "summary": {
+    "title": "Lab3 Small WLAN",
+    "owner": "Bukari Samuel Amoako",
+    "description": "A small home/office WLAN consisting of one modem, one Wi-Fi router/access point, two laptops, one smartphone, a network printer and a NAS file server, connected to the Internet via an ISP.\n\nAssets: router/AP, router firmware and configuration, router admin credentials, Wi-Fi passphrase, client devices, NAS and stored files, user data and credentials, network traffic, and the Internet connection.\n\nAssumptions: WPA2-PSK is used with a single shared passphrase, all users share one SSID, and the router uses default settings unless stated otherwise.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "Dr.Felix Aryeh",
+    "threatTop": 0
+  }
+}
