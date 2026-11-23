@@ -454,13 +454,6 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -708,7 +701,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -729,13 +723,45 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "20b2ee14-9e12-463a-8dab-7d83f414b110",
+                  "title": "WPA2 handshake capture and cracking",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Attacker captures the WPA2 4-way handshake and cracks a weak shared passphrase offline, then decrypts traffic. Vulnerability: weak PSK and WPS enabled.",
+                  "mitigation": "Use a random passphrase of 16+ characters, switch to WPA3-SAE, disable WPS, and rotate the passphrase periodically.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "8"
+                },
+                {
+                  "id": "c5dffc0c-0eb7-4766-94f2-fa765e3b5c16",
+                  "title": "Man-in-the-middle",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker on the WLAN poisons ARP caches to intercept or alter traffic between clients and the router. Vulnerability: no client isolation and unencrypted protocols.",
+                  "mitigation": "Enable client isolation and dynamic ARP inspection, and use HTTPS or a VPN.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "7"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Wi-Fi WPA2\n"
@@ -751,10 +777,24 @@
             },
             "vertices": [
               {
+                "x": 280,
+                "y": -270
+              },
+              {
                 "x": 350,
                 "y": -240
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -919,6 +959,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr.Felix Aryeh",
-    "threatTop": 3
+    "threatTop": 5
   }
 }
